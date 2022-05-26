@@ -1,0 +1,41 @@
+.container {
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    padding: 30px;
+    display: flex;
+
+    div {
+        width: 80%;
+        height: fit-content;
+        margin: 50px auto;
+    }
+    p {
+        width: 60%;
+        font-size: 32px;
+        font-weight: bold;
+        padding: 20px;
+        margin: 20px auto;
+    }
+    @media screen and (max-width: 900px) {
+        p {
+            width: 80%;
+            font-size: 22px;
+        }
+    }
+    a {
+        margin: auto 10px auto 0px;
+        padding: 10px 20px;
+        border: 1.5px solid #4B48D8;
+        border-radius: 5px;
+        color: #4B48D8;
+        font-weight: bold;
+        transition: 300ms;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #4B48D8;
+            color: #fff;
+        }
+    }
+}

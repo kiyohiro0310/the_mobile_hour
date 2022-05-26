@@ -1,0 +1,16 @@
+.container{
+    width: 100%;
+    position: relative;
+    top: 70px;
+    nav{
+        a{
+            font-size: 14px;
+            color: #666666;
+            margin: auto 10px auto 10px;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -1,0 +1,83 @@
+.container {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    z-index: 100;
+
+    div {
+        display: flex;
+        flex-direction: row;
+    }
+    .left {
+        width: 50%;
+        justify-content: flex-start;
+        align-items: center;
+
+        .logo{
+            width: 45px;
+            height: 45px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+        nav a {
+            margin-right: 20px;
+            color: #666666;
+            &:hover{
+                color: #000;
+            }
+        }
+    }
+
+    .right{
+        width: 50%;
+        justify-content: flex-end;
+        align-items: center;
+        nav{
+            margin-right: 20px;
+            a {
+                margin: auto 10px auto 0px;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+            .login {
+                border: 1.5px solid #4B48D8;
+                border-radius: 5px;
+                color: #4B48D8;
+                font-weight: bold;
+                &:hover {
+                    background-color: #efefef;
+                }
+            }
+            .signup {
+                border: 1.5px solid #4B48D8;
+                border-radius: 5px;
+                background-color: #4B48D8;
+                color: #fff;
+                font-weight: bold;
+                &:hover {
+                    background-color: #615fe0;
+                }
+            }
+        }
+    }
+}
+
+.cart_notification {
+    width: 15px;
+    height: 15px;
+    position: fixed;
+    top: 20px;
+    left: 167px;
+    font-size: 13px;
+    z-index: 300;
+    border-radius: 30px;
+    text-align: center;
+    background-color: rgb(231, 118, 11);
+    color: #fff;
+    font-weight: bold;
+}

@@ -1,0 +1,35 @@
+.main {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    text-align: center;
+    background-color: rgb(100, 97, 97);
+    h2 {
+        width: 20%;
+        align-self: center;
+    }
+    p {
+        width: 50%;
+        margin: auto;
+        font-size: 18px;
+        font-weight: bold;
+    }
+}
+
+.pending {
+    background-color: rgb(100, 97, 97);
+}
+.success {
+    background-color: #4B48D8;
+}
+.error {
+    background-color: rgb(238, 79, 51);
+}
+.checkout {
+    background-color: rgb(111, 213, 111);
+    color: #3c4043;
+}

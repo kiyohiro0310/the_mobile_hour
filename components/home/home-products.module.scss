@@ -1,0 +1,25 @@
+.container {
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    padding: 40px 20px;
+
+    .products{
+        .product_box {
+            width: 300px;
+            height: fit-content;
+            display: inline-block;
+            text-align: center;
+            padding: 20px;
+            margin: 10px auto;
+            cursor: pointer;
+
+            .product {
+                transition: 300ms;
+                &:hover{
+                    color: #4B48D8;
+                }
+            }
+        }
+    }
+}

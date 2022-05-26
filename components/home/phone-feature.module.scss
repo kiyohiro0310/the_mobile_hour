@@ -1,0 +1,64 @@
+.container {
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+
+    .iphone,.android {
+        width: 80%;
+        margin: 10px auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .image {
+            width: 50%;
+            height: fit-content;
+            padding: 30px;
+        }
+
+        .image_description {
+            width: 50%;
+            height: fit-content;
+            h2 {
+                padding: 30px;
+            }
+
+            p {
+                width: 90%;
+                margin: auto;
+                font-size: 20px;
+            }
+        }
+    }
+    @media screen and (max-width: 900px) {
+        h1 {
+            font-size: 26px;
+        }
+        .iphone, .android {
+            width: 98%;
+            flex-direction: column;
+
+            .image {
+                width:  80%;
+            }
+            .image_description {
+                width: 90%;
+                h2 {
+                    padding: 10px;
+                    font-size: 22px;
+                }
+                p {
+                    width: 100%;
+                    font-size: 18px;
+                }
+            }
+        }
+        .android {
+            flex-direction: column-reverse;
+        }
+    }
+}

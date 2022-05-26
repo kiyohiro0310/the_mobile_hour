@@ -1,0 +1,107 @@
+.main {
+    width: 100%;
+    height: 83vh;
+    position: relative;
+    top: 70px;
+    text-align: center;
+    overflow: auto;
+
+    .cart {
+        padding: 30px;
+
+        .cart_check {
+            width: 100%;
+            height: 60px;
+            position: fixed;
+            left: 0;
+            bottom: 15px;
+            background-color: #fff;
+
+            div {
+                position: absolute;
+                right: 100px;
+                @media screen and (max-width: 800px) {
+                    right: 50px;
+                }
+                span {
+                    font-weight: bold;
+                    font-size: 20px;
+                    margin-right: 100px;
+                    text-decoration: underline;
+                    line-height: 3rem;
+                }
+                button {
+                    padding: 10px 40px;
+                    border: 1.5px solid #4B48D8;
+                    border-radius: 5px;
+                    background-color: #4B48D8;
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: #615fe0;
+                    }
+                }
+            }
+        }
+
+        .product_boxes {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .product_box {
+                width: 70%;
+                height: fit-content;
+                display: flex;
+                flex-direction: row;
+                margin: auto;
+                @media screen and (max-width: 800px) {
+                    width: 90%;
+                }
+
+                .image {
+                    width: 50%;
+                    @media screen and (max-width: 800px) {
+                        width: 45%;
+                    }
+
+                }
+
+                .description {
+                    width: 40%;
+                    text-align: left;
+                    font-size: 18px;
+                    margin: 0px auto;
+                    @media screen and (max-width: 800px) {
+                        width:50%;
+                    }
+
+                    a{
+                        color: rgb(18, 39, 229);
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                    span {
+                        margin-left: 20px;
+                        cursor: pointer;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .cart_empty {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        top: 35%;
+        font-size: 18px;
+    }
+}
+
