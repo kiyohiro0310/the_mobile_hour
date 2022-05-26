@@ -157,11 +157,3 @@ export async function findByUserIdAndBetweenDate(user_id: string, date_from: str
         console.log(error);
     }
 }
-
-interface searchLogTypes {
-    product_id: string;
-    user_id: string;
-    date_from: string;
-    date_to: string;
-}
-
