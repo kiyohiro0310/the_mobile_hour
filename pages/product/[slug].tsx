@@ -48,7 +48,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const allPhoneData = JSON.parse(dataJSON) as Phone[];
   const phoneArr: Phone[] = allPhoneData;
 
-  const slugs = phoneArr.map(phone => { return phone.id });
+  const slugs = phoneArr.map(phone => phone.id );
 
   return {
     paths: slugs.map(slug => ({
@@ -56,7 +56,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         slug: String(slug)
       }
     })),
-    fallback: "blocking"
+    fallback: false
   }
 }
 
