@@ -46,8 +46,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const data = await findAllPhones();
   const dataJSON = JSON.stringify(data);
   const allPhoneData = JSON.parse(dataJSON) as Phone[];
+  const phoneArr: Phone[] = allPhoneData;
 
-  const slugs = allPhoneData.map(phone => { return phone.id });
+  const slugs = phoneArr.map(phone => { return phone.id });
 
   return {
     paths: slugs.map(slug => ({
