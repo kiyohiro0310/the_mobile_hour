@@ -29,7 +29,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const JSONdata_phone = JSON.stringify(data_phone);
   const phoneData = JSON.parse(JSONdata_phone) as Phone[];
 
-  const data_feature = await findPhoneFeature(phoneData[0].feature_id);
+  const data_feature = await findPhoneFeature(String(phoneData[0].feature_id));
   const JSONdata_feature = JSON.stringify(data_feature);
   const featureData = JSON.parse(JSONdata_feature)
 
