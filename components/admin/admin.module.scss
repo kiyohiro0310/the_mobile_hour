@@ -363,7 +363,9 @@
 
                 .change_container {
                     width: 100%;
-                    padding: 0;
+                    height: 80vh;
+                    padding-left: 10px;
+                    overflow: auto;
                     form{
                         padding-bottom: 20px;
                         .form {
@@ -402,8 +404,6 @@
                             padding: 0px;
                             margin: auto;
                         }
-
-
                     }
                     table {
                         width: 90%;
@@ -420,16 +420,13 @@
                             tr{
                                 td{
                                     text-align: left;
+                                    padding: 10px;
                                 }
                             }
                         }
-
                     }
-
                 }
             }
-
         }
-
     }
 }

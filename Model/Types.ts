@@ -81,3 +81,40 @@ export interface ChangeLogType {
     product_id: string;
     action: string;
 }
+
+export interface OrderType {
+    order_number: Number;
+    order_date: string;
+    order_delivery_date: string;
+    product_id: Number;
+    customer_id: Number;
+}
+
+export interface OrderDetailType {
+    id: Number;
+    product_id: Number;
+    quantity: Number;
+    price_sold: Number;
+    order_number: Number;
+}
+
+export interface OrderAndOrderDetailType {
+    order_number: Number;
+    order_date: string;
+    order_delivery_date: string;
+    product_id: string;
+    product_name: string;
+    product_model: string;
+    manufacturer: string;
+    price: Number;
+    stock_on_hand: Number;
+    customer_id: Number;
+    firstname: string;
+    lastname: string;
+    phone: string;
+    email: string;
+    address: string;
+    city: string;
+    postcode: Number;
+    state: string;
+}

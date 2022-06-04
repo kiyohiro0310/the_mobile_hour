@@ -18,7 +18,7 @@ const HomeHero = () => {
             <div className={classes.textbox}>
                 <h1>Top brand mobile phone online.</h1>
                 <p>We are selling top brand mobile phones online. Choose your best from multiple choices.</p>
-                <Link href="#"><a>Learn more</a></Link>
+                <Link href="/product"><a>Learn more</a></Link>
             </div>
         </div>
     </div>

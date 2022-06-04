@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classes from "./admin.module.scss";
 import { NextPage } from 'next';
-import { AdminType, ChangeLogType, Phone } from '../../Model/Types';
+import { AdminType, ChangeLogType, OrderAndOrderDetailType, Phone } from '../../Model/Types';
 import AdminProfile from './admin-profile';
 import AddProduct from './admin-add-product';
 import UpdateProduct from './admin-update-product';
@@ -9,12 +9,14 @@ import ChangeLog from './admin-changelog';
 import CreateAdmin from './admin-create-admin';
 import Stock from './admin-stock';
 import AdminList from './admin-list';
+import AdminOrder from './admin-order';
 
 interface Propstype {
   user: any;
   phones: Phone[];
   changeLogs: ChangeLogType[];
-  admins: AdminType[]
+  admins: AdminType[];
+  orders: OrderAndOrderDetailType[];
 }
 
 const AdminHome: NextPage<Propstype> = (props) => {
@@ -26,6 +28,16 @@ const AdminHome: NextPage<Propstype> = (props) => {
   const [isAdminList, setIsAdminList] = useState(false);
   const [isChangeLog, setIsChangeLog] = useState(false);
   const [isCreateAdmin, setIsCreateAdmin] = useState(false);
+  const [isOrder, setIsOrder] = useState(false);
+
+  if(!admin.username) {
+    return (
+      <div>
+        <h1>Access denied.</h1>
+        <p>You are not authorized.</p>
+      </div>
+    )
+  }
 
   function setAdminInfoHandler() {
     setIsAdminInfo(prevState => !prevState)
@@ -47,6 +59,9 @@ const AdminHome: NextPage<Propstype> = (props) => {
   }
   function setCreateAdminHandler() {
     setIsCreateAdmin(prevState => !prevState)
+  }
+  function setOrderHandler() {
+    setIsOrder(prevState => !prevState);
   }
 
 
@@ -79,6 +94,16 @@ const AdminHome: NextPage<Propstype> = (props) => {
                 close
               </p>
               <UpdateProduct user={admin} changelogs={props.changeLogs} onSet={setAdminUpdateProductHandler}/>
+            </div>
+          )}
+        <p onClick={setOrderHandler}>Orders</p>
+        {isOrder && (
+            <div className={classes.info_container}>
+              <p className={classes.info_container_close} onClick={setOrderHandler}>
+                close
+              </p>
+              <h3>Orders</h3>
+              <AdminOrder orders={props.orders}/>
             </div>
           )}
 

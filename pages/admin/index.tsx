@@ -6,17 +6,20 @@ import AdminHome from '../../components/admin/admin-home';
 import { GetStaticProps, NextPage } from 'next';
 import { findAllAdmins, findAllChangeLogs, findAllPhones } from '../../lib/db';
 import { AdminType, ChangeLogType, Phone } from '../../Model/Types';
+import { getAllOrderAndOrderDetails } from '../../lib/db-checkout';
 
 interface PropsType {
     phones: Phone[];
     changeLogs: ChangeLogType[]
     admins: AdminType[]
+    orders: any[]
 }
 
 const Admin: NextPage<PropsType> = (props) => {
     const phones = props.phones;
     const changeLogs = props.changeLogs;
     const admins = props.admins;
+    const orders = props.orders;
 
     const {data: session} = useSession();
     const [user, setUser] = useState({});
@@ -51,7 +54,7 @@ const Admin: NextPage<PropsType> = (props) => {
   return (
     <div className={classes.main}>
         {session && (
-            <AdminHome user={user} phones={phones} changeLogs={changeLogs} admins={admins}/>
+            <AdminHome user={user} phones={phones} changeLogs={changeLogs} admins={admins} orders={orders} />
         )}
     </div>
   )
@@ -70,11 +73,16 @@ export const getStaticProps: GetStaticProps = async () => {
     const JSONadminData = JSON.stringify(adminData);
     const admins = JSON.parse(JSONadminData);
 
+    const orderData = await getAllOrderAndOrderDetails();
+    const JSONOrderData = JSON.stringify(orderData);
+    const orders = JSON.parse(JSONOrderData);
+
     return {
         props: {
             phones: phones,
             changeLogs: changeLogs,
-            admins: admins
+            admins: admins,
+            orders: orders
         }
     }
   }

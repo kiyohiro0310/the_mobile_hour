@@ -41,24 +41,24 @@ const MainNavigation = () => {
       <Fragment>
         <div className={classes.container}>
             <div className={classes.left}>
-                <Link href="/"><a className={classes.logo}><Image src="/images/logo.jpg" alt="logo" width={80} height={80} /></a></Link>
+                <Link href="/" tabIndex={0}><a className={classes.logo}><Image src="/images/logo.jpg" alt="logo" width={80} height={80} /></a></Link>
                 <nav>
-                    <Link href="/product"><a>Product</a></Link>
-                    <Link href="/cart"><a>Cart</a></Link>
+                    <Link href="/product" tabIndex={0}><a>Product</a></Link>
+                    <Link href="/cart" tabIndex={0}><a>Cart</a></Link>
                     {cart && (<span className={classes.cart_notification}>{cart_items_amount}</span>)}
                 </nav>
             </div>
             <div className={classes.right}>
                 {!session && (
                     <nav>
-                        <a className={classes.login} onClick={setIsLoginHandler}>Login</a>
-                        <a className={classes.signup} onClick={setIsSignupHandler}>Sign up</a>
+                        <a className={classes.login} onClick={setIsLoginHandler} tabIndex={0}>Login</a>
+                        <a className={classes.signup} onClick={setIsSignupHandler} tabIndex={0}>Sign up</a>
                     </nav>
                 )}
                 {session && (
                 <nav>
-                    <Link href="/profile"><a className={classes.signup} onClick={setFalseHandler} >Profile</a></Link>
-                    <a className={classes.login} onClick={logoutHandler}>Logout</a>
+                    <Link href="/profile" tabIndex={0}><a className={classes.signup} onClick={setFalseHandler} >Profile</a></Link>
+                    <a className={classes.login} onClick={logoutHandler} tabIndex={0}>Logout</a>
                 </nav>
 
                 )}
