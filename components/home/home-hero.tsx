@@ -10,7 +10,6 @@ const HomeHero = () => {
             <div className={classes.phone}>
                 <div className={classes.image}>
                     <Image src="/images/home/phone.png" alt="phone image" width={110} height={46} layout="responsive" />
-
                 </div>
             </div>
         </div>

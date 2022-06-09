@@ -42,7 +42,12 @@ const Admin: NextPage<PropsType> = (props) => {
         })
         setIsLoading(false)
     },[email]);
+    if(isLoading) {
+        <div className={classes.main}>
+            <p>Loading...</p>
+        </div>
 
+    }
     if(!session) {
         return (
             <div className={classes.main}>

@@ -17,15 +17,15 @@
         @media screen and (max-width: 900px) {
             width: 100%;
         }
-
-    }
-    .phone{
-        width: 450px;
-        height: fit-content;
-        margin: auto;
-        .image{
-            width: 450px;
+        .phone{
+            width: 100%;
+            height: fit-content;
+            margin: auto;
+            .image{
+                width: 100%;
+            }
         }
+
     }
 
     .textbox{
