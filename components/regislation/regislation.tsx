@@ -174,8 +174,15 @@ const Regislation: NextPage<TypeProps> = (props) => {
           </div>
           <h1>Login</h1>
           <form onSubmit={submitHandler} className={classes.login_form}>
-              <input type="email" name='mail' id='mail' placeholder='Email' required ref={emailRef}/>
+            <div>
+              <input type="email" name='mail' id='mail' placeholder='Email' required ref={emailRef} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+              <span className={classes.input_validation}>Invalid input.</span>
+            </div>
+            <div>
               <input type="password" name='password' id='password' placeholder='Password' required ref={passwordRef}/>
+              <span className={classes.input_validation}>Invalid input.</span>
+            </div>
+
               <input type="submit" value="Login" className={classes.submit_button}/>
           </form>
           <p onClick={setLoginFunction}>Create account?</p>
@@ -190,24 +197,52 @@ const Regislation: NextPage<TypeProps> = (props) => {
           <h1>Create account</h1>
           <form onSubmit={submitHandler} className={classes.create_form}>
             <div>
-              <input type="text" placeholder='First Name' required ref={firstnameRef}/>
-              <input type="text" placeholder='Last Name' required ref={lastnameRef}/>
+              <div>
+                <input type="text" placeholder='First Name' required ref={firstnameRef} pattern="[a-zA-z]*"/>
+                <span className={classes.input_validation}>Invalid input.</span>
+              </div>
+              <div>
+                <input type="text" placeholder='Last Name' required ref={lastnameRef} pattern="[a-zA-z]*"/>
+                <span className={classes.input_validation}>Invalid input.</span>
+              </div>
             </div>
             <div>
-              <input type="tel" placeholder='Phone' required ref={phoneRef}/>
-              <input type="email" placeholder='Email' required ref={emailRef}/>
+              <div>
+                <input type="tel" placeholder='Phone' required ref={phoneRef} pattern="[0-9]*"/>
+                <span className={classes.input_validation}>Invalid input.</span>
+              </div>
+              <div>
+                <input type="email" placeholder='Email' required ref={emailRef} pattern="[a-zA-z]*"/>
+                <span className={classes.input_validation}>Invalid input.</span>
+              </div>
             </div>
             <div>
-              <input type="text" placeholder='Address' required ref={addressRef}/>
-              <input type="text" placeholder='Postcode' required ref={postcodeRef}/>
+              <div>
+                <input type="text" placeholder='Address' required ref={addressRef} pattern="^(?!^ +$)([\w -&]+)$"/>
+                <span className={classes.input_validation}>Invalid input.</span>
+              </div>
+              <div>
+                <input type="text" placeholder='Postcode' required ref={postcodeRef} pattern="[0-9]*"/>
+                <span className={classes.input_validation}>Invalid input.</span>
+              </div>
             </div>
             <div>
-              <input type="text" placeholder='City' required ref={cityRef}/>
-              <input type="text" placeholder='State' required ref={stateRef}/>
+              <div>
+                <input type="text" placeholder='City' required ref={cityRef} pattern="[a-zA-z]*"/>
+                <span className={classes.input_validation}>Invalid input.</span>
+              </div>
+              <div>
+                <input type="text" placeholder='State' required ref={stateRef} pattern="[0-9]*"/>
+                <span className={classes.input_validation}>Invalid input.</span>
+              </div>
             </div>
             <div>
-              <input type="password" placeholder='Password' required ref={passwordRef}/>
-              <input type="password" placeholder='Confirm password' required ref={passwordConfirmRef}/>
+              <div>
+                <input type="password" placeholder='Password' required ref={passwordRef}/>
+              </div>
+              <div>
+                <input type="password" placeholder='Confirm password' required ref={passwordConfirmRef}/>
+              </div>
             </div>
 
               <input type="submit" value="Create" className={classes.submit_button}/>

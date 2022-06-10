@@ -78,19 +78,23 @@ const ChangeLog: NextPage<PropsType> = (props) => {
             <div className={classes.form}>
               <div>
                 <label htmlFor="">Product ID:</label>
-                <input type="text" ref={productIdRef}/>
+                <input type="text" ref={productIdRef} pattern="[0-9]*"/>
+                <span className={classes.input_validation}>Invalid input.</span>
               </div>
               <div>
                 <label htmlFor="">User ID:</label>
-                <input type="text" ref={userIdRef}/>
+                <input type="text" ref={userIdRef} pattern="[0-9]*"/>
+                <span className={classes.input_validation}>Invalid input.</span>
               </div>
               <div>
                 <label htmlFor="">Modified From:</label>
                 <input type="date" ref={dateFromRef}/>
+                <span className={classes.input_validation}>Invalid input.</span>
               </div>
               <div>
                 <label htmlFor="">Modified To:</label>
                 <input type="date" ref={dateToRef}/>
+                <span className={classes.input_validation}>Invalid input.</span>
               </div>
             </div>
             <input type="submit" value="Search" className={classes.submit}/>

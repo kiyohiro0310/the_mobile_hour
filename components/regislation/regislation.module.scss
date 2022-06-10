@@ -1,3 +1,13 @@
+@mixin input-validation{
+    .input_validation {
+        display: none;
+        color: rgb(253, 36, 36);
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+}
+
 .container {
     width: 45%;
     height: fit-content;
@@ -23,14 +33,27 @@
         margin: auto;
         display: flex;
         flex-direction: column;
-
-        input {
+        div {
+            display: flex;
+            flex-direction: column;
             width: 60%;
-            height: 35px;
+            text-align: left;
             margin: 5px auto;
-            border-radius: 5px;
-            border: 1px solid #666666;
+
+            input {
+                width: 100%;
+                height: 35px;
+                border-radius: 5px;
+                border: 1px solid #666666;
+
+                &:invalid + .input_validation {
+                    display: initial;
+                }
+
+            }
+            @include input-validation();
         }
+
         .submit_button {
             width: 30%;
             height: 40px;
@@ -60,13 +83,24 @@
         div {
             display: flex;
             flex-direction: row;
-            input {
+            div {
+                display: flex;
+                flex-direction: column;
                 width: 40%;
-                height: 35px;
+                text-align: left;
                 margin: 5px auto;
-                border-radius: 5px;
-                border: 1px solid #666666;
 
+                input {
+                    width: 100%;
+                    height: 35px;
+                    margin: 5px auto;
+                    border-radius: 5px;
+                    border: 1px solid #666666;
+                    &:invalid + .input_validation {
+                        display: initial;
+                    }
+                }
+                @include input-validation();
             }
         }
     }

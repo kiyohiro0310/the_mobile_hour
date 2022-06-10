@@ -175,7 +175,8 @@ const AdminList: NextPage<PropsType> = (props) => {
                 <div className={classes.product_detail}>
                 <div className={classes.search_product}>
                     <label htmlFor="user_id">User ID:</label>
-                    <input type="text" name='user_id' required ref={adminIDRef}/>
+                    <input type="text" name='user_id' required ref={adminIDRef} pattern="[0-9]*"/>
+                    <span className={classes.input_validation}>Invalid input.</span>
                 </div>
                 <div>
                     <input type="submit" value="Search" className={classes.submit} />
@@ -215,28 +216,33 @@ const AdminList: NextPage<PropsType> = (props) => {
             )}
 
                 <div className={classes.add_product}>
-                <h3>Product <span>Detail</span></h3>
+                <h3>Admin <span>Detail</span></h3>
                 <form onSubmit={submitHandler}>
                   <div className={classes.product_detail}>
-                  <div>
+                    <div>
                         <h3>First Name: </h3>
-                        <input type="text" defaultValue={isAdmin.firstname} ref={firstnameRef} />
+                        <input type="text" defaultValue={isAdmin.firstname} ref={firstnameRef} pattern="[a-zA-z]*"/>
+                        <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                         <h3>Last Name: </h3>
-                        <input type="text" defaultValue={isAdmin.lastname} ref={lastnameRef} />
+                        <input type="text" defaultValue={isAdmin.lastname} ref={lastnameRef} pattern="[a-zA-z]*"/>
+                        <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                         <h3>Role: </h3>
-                        <input type="tel" defaultValue={isAdmin.role} ref={roleRef} />
+                        <input type="tel" defaultValue={isAdmin.role} ref={roleRef} pattern="[a-zA-z]*"/>
+                        <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                         <h3>User Name: </h3>
-                        <input type="tel" defaultValue={isAdmin.username} ref={usernameRef} />
+                        <input type="tel" defaultValue={isAdmin.username} ref={usernameRef} pattern="[a-zA-z0-9]*"/>
+                        <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                         <h3>Email: </h3>
-                        <input type="text" defaultValue={isAdmin.email}  ref={emailRef} />
+                        <input type="text" defaultValue={isAdmin.email}  ref={emailRef} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+                        <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                         <h3>New Password: </h3>

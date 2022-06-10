@@ -16,7 +16,7 @@ const addNewProductHandler = async (product: Phone, feature: Feature) => {
   const data = await response.json();
 
   if(!response.ok) {
-    throw new Error("Something weng wrong.");
+    throw new Error("Something went wrong.");
   }
 
   return data;
@@ -123,7 +123,7 @@ const AddProduct: NextPage<PropsType> = (props) => {
     }
 
     const date = new Date();
-    const today = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate();
+    const today = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
 
     const log: ChangeLogType = {
       id: String(logID),
@@ -152,7 +152,6 @@ const AddProduct: NextPage<PropsType> = (props) => {
       props.onSet();
       Router.replace("/admin");
     }
-
   }
 
   return (
@@ -163,23 +162,28 @@ const AddProduct: NextPage<PropsType> = (props) => {
           <div className={classes.product_detail}>
             <div>
               <label htmlFor="product_name">Product Name:</label>
-              <input type="text" name='product_name' required ref={productNameRef}/>
+              <input type="text" name='product_name' required ref={productNameRef} pattern="^(?!^ +$)([\w -&]+)$"/>
+              <span className={classes.input_validation}>Invalid input.</span>
             </div>
             <div>
               <label htmlFor="product_model">Product Model:</label>
-              <input type="text" name='product_model' required ref={productModelRef}/>
+              <input type="text" name='product_model' required ref={productModelRef} pattern="^(?!^ +$)([\w -&]+)$"/>
+              <span className={classes.input_validation}>Invalid input.</span>
             </div>
             <div>
               <label htmlFor="manufacturer">Manufacturer:</label>
-              <input type="text" name='manufacturer' required ref={manufacturerRef}/>
+              <input type="text" name='manufacturer' required ref={manufacturerRef} pattern="^(?!^ +$)([\w -&]+)$"/>
+              <span className={classes.input_validation}>Invalid input.</span>
             </div>
             <div>
               <label htmlFor="price">Price:</label>
-              <input type="text" name='price' required ref={priceRef}/>
+              <input type="text" name='price' required ref={priceRef} pattern="[0-9]*"/>
+              <span className={classes.input_validation}>Invalid input.</span>
             </div>
             <div>
               <label htmlFor="stock">Stock:</label>
-              <input type="text" name='stock' required ref={stockRef}/>
+              <input type="text" name='stock' required ref={stockRef} pattern="[0-9]*"/>
+              <span className={classes.input_validation}>Invalid input.</span>
             </div>
             <div>
               <label htmlFor="feature">Feature ID:</label>
@@ -195,47 +199,58 @@ const AddProduct: NextPage<PropsType> = (props) => {
             </div>
             <div>
               <label htmlFor="weight">Weight:</label>
-              <input type="text" name='weight' required ref={weightRef}/>
+              <input type="text" name='weight' required ref={weightRef} pattern="^$|.*\S+.*"/>
+              <span className={classes.input_validation}>Invalid input.</span>
             </div>
             <div>
               <label htmlFor="dimensions">Dimensions:</label>
-              <input type="text" name='dimensions' required ref={dimensionsRef}/>
+              <input type="text" name='dimensions' required ref={dimensionsRef} pattern="^$|.*\S+.*"/>
+              <span className={classes.input_validation}>Invalid input.</span>
             </div>
             <div>
               <label htmlFor="os">OS:</label>
-              <input type="text" name='os' required ref={osRef}/>
+              <input type="text" name='os' required ref={osRef} pattern="^$|.*\S+.*"/>
+              <span className={classes.input_validation}>Invalid input.</span>
             </div>
             <div>
               <label htmlFor="screensize">Screen Size:</label>
-              <input type="text" name='screensize' required ref={screenSizeRef}/>
+              <input type="text" name='screensize' required ref={screenSizeRef} pattern="^$|.*\S+.*"/>
+              <span className={classes.input_validation}>Invalid input.</span>
             </div>
             <div>
               <label htmlFor="resolution">Resolution:</label>
-              <input type="text" name='resolution' required ref={resolutionRef}/>
+              <input type="text" name='resolution' required ref={resolutionRef} pattern="^$|.*\S+.*"/>
+              <span className={classes.input_validation}>Invalid input.</span>
             </div>
             <div>
               <label htmlFor="cpu">CPU:</label>
-              <input type="text" name='cpu' required ref={cpuRef}/>
+              <input type="text" name='cpu' required ref={cpuRef} pattern="^$|.*\S+.*"/>
+              <span className={classes.input_validation}>Invalid input.</span>
             </div>
             <div>
               <label htmlFor="ram">RAM:</label>
-              <input type="text" name='ram' required ref={ramRef}/>
+              <input type="text" name='ram' required ref={ramRef} pattern="^$|.*\S+.*"/>
+              <span className={classes.input_validation}>Invalid input.</span>
             </div>
             <div>
               <label htmlFor="storage">Storage:</label>
-              <input type="text" name='storage' required ref={storageRef}/>
+              <input type="text" name='storage' required ref={storageRef} pattern="^$|.*\S+.*"/>
+              <span className={classes.input_validation}>Invalid input.</span>
             </div>
             <div>
               <label htmlFor="battery">Battery:</label>
-              <input type="text" name='battery' required ref={batteryRef}/>
+              <input type="text" name='battery' required ref={batteryRef} pattern="^$|.*\S+.*"/>
+              <span className={classes.input_validation}>Invalid input.</span>
             </div>
             <div>
               <label htmlFor="rear_camera">Rear Camera:</label>
-              <input type="text" name='rear_camera' required ref={rearCameraRef}/>
+              <input type="text" name='rear_camera' required ref={rearCameraRef} pattern="^$|.*\S+.*"/>
+              <span className={classes.input_validation}>Invalid input.</span>
             </div>
             <div>
               <label htmlFor="front_camera">Front Camera:</label>
-              <input type="text" name='front_camera' required ref={frontCameraRef}/>
+              <input type="text" name='front_camera' required ref={frontCameraRef} pattern="^$|.*\S+.*"/>
+              <span className={classes.input_validation}>Invalid input.</span>
             </div>
           </div>
           <div>

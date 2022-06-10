@@ -241,7 +241,8 @@ function deleteHandler() {
             <div className={classes.product_detail}>
               <div className={classes.search_product}>
                 <label htmlFor="product_id">Product ID:</label>
-                <input type="text" name='product_id' required ref={productIDRef}/>
+                <input type="text" name='product_id' required ref={productIDRef} pattern="[0-9]*"/>
+                <span className={classes.input_validation}>Invalid input.</span>
               </div>
               <div>
                 <input type="submit" value="Search" className={classes.submit} />
@@ -291,26 +292,32 @@ function deleteHandler() {
                     <div>
                       <label htmlFor="product_name">Product ID:</label>
                       <input type="text" name='product_name' defaultValue={product!.id} required ref={productIDRef} disabled/>
+                      <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                       <label htmlFor="product_name">Product Name:</label>
-                      <input type="text" name='product_name' defaultValue={product!.product_name} required ref={productNameRef}/>
+                      <input type="text" name='product_name' defaultValue={product!.product_name} required ref={productNameRef} pattern="^(?!^ +$)([\w -&]+)$"/>
+                      <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                       <label htmlFor="product_model">Product Model:</label>
-                      <input type="text" name='product_model' defaultValue={product!.product_model} required ref={productModelRef}/>
+                      <input type="text" name='product_model' defaultValue={product!.product_model} required ref={productModelRef} pattern="^(?!^ +$)([\w -&]+)$"/>
+                      <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                       <label htmlFor="manufacturer">Manufacturer:</label>
-                      <input type="text" name='manufacturer' defaultValue={product!.manufacturer} required ref={manufacturerRef}/>
+                      <input type="text" name='manufacturer' defaultValue={product!.manufacturer} required ref={manufacturerRef} pattern="^(?!^ +$)([\w -&]+)$"/>
+                      <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                       <label htmlFor="price">Price:</label>
-                      <input type="text" name='price' defaultValue={String(product!.price)} required ref={priceRef}/>
+                      <input type="text" name='price' defaultValue={String(product!.price)} required ref={priceRef} pattern="[0-9]*"/>
+                      <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                       <label htmlFor="stock">Stock:</label>
-                      <input type="text" name='stock' defaultValue={product!.stock_on_hand} required ref={stockRef}/>
+                      <input type="text" name='stock' defaultValue={product!.stock_on_hand} required ref={stockRef} pattern="[0-9]*"/>
+                      <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                       <label htmlFor="feature">Feature ID:</label>
@@ -326,47 +333,58 @@ function deleteHandler() {
                     </div>
                     <div>
                       <label htmlFor="weight">Weight:</label>
-                      <input type="text" name='weight' defaultValue={feature!.weight} required ref={weightRef}/>
+                      <input type="text" name='weight' defaultValue={feature!.weight} required ref={weightRef} pattern="^$|.*\S+.*"/>
+                      <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                       <label htmlFor="dimensions">Dimensions:</label>
-                      <input type="text" name='dimensions' defaultValue={feature!.dimensions} required ref={dimensionsRef}/>
+                      <input type="text" name='dimensions' defaultValue={feature!.dimensions} required ref={dimensionsRef} pattern="^$|.*\S+.*"/>
+                      <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                       <label htmlFor="os">OS:</label>
-                      <input type="text" name='os' defaultValue={feature!.OS} required ref={osRef}/>
+                      <input type="text" name='os' defaultValue={feature!.OS} required ref={osRef} pattern="^$|.*\S+.*"/>
+                      <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                       <label htmlFor="screensize">Screen Size:</label>
-                      <input type="text" name='screensize' defaultValue={feature!.screensize} required ref={screenSizeRef}/>
+                      <input type="text" name='screensize' defaultValue={feature!.screensize} required ref={screenSizeRef} pattern="^$|.*\S+.*"/>
+                      <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                       <label htmlFor="resolution">Resolution:</label>
-                      <input type="text" name='resolution' defaultValue={feature!.resolution} required ref={resolutionRef}/>
+                      <input type="text" name='resolution' defaultValue={feature!.resolution} required ref={resolutionRef} pattern="^$|.*\S+.*"/>
+                      <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                       <label htmlFor="cpu">CPU:</label>
-                      <input type="text" name='cpu' defaultValue={feature!.CPU} required ref={cpuRef}/>
+                      <input type="text" name='cpu' defaultValue={feature!.CPU} required ref={cpuRef} pattern="^$|.*\S+.*"/>
+                      <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                       <label htmlFor="ram">RAM:</label>
-                      <input type="text" name='ram' defaultValue={feature!.RAM} required ref={ramRef}/>
+                      <input type="text" name='ram' defaultValue={feature!.RAM} required ref={ramRef} pattern="^$|.*\S+.*"/>
+                      <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                       <label htmlFor="storage">Storage:</label>
-                      <input type="text" name='storage' defaultValue={feature!.storage} required ref={storageRef}/>
+                      <input type="text" name='storage' defaultValue={feature!.storage} required ref={storageRef} pattern="^$|.*\S+.*"/>
+                      <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                       <label htmlFor="battery">Battery:</label>
-                      <input type="text" name='battery' defaultValue={feature!.battery} required ref={batteryRef}/>
+                      <input type="text" name='battery' defaultValue={feature!.battery} required ref={batteryRef} pattern="^$|.*\S+.*"/>
+                      <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                       <label htmlFor="rear_camera">Rear Camera:</label>
-                      <input type="text" name='rear_camera' defaultValue={feature!.rear_camera} required ref={rearCameraRef}/>
+                      <input type="text" name='rear_camera' defaultValue={feature!.rear_camera} required ref={rearCameraRef} pattern="^$|.*\S+.*"/>
+                      <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                       <label htmlFor="front_camera">Front Camera:</label>
                       <input type="text" name='front_camera' defaultValue={feature!.front_camera} required ref={frontCameraRef}/>
+                      <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                   </div>
                   <div>

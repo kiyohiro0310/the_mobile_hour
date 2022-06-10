@@ -88,27 +88,33 @@ const CreateAdmin: NextPage<PropsType> = (props) => {
         <div className={classes.info}>
             <div>
                 <h3>First Name: </h3>
-                <input type="text" required ref={firstnameRef} />
+                <input type="text" required ref={firstnameRef} pattern="[a-zA-z]*"/>
+                <span className={classes.input_validation}>Invalid input.</span>
             </div>
             <div>
                 <h3>Last Name: </h3>
-                <input type="text" required ref={lastnameRef} />
+                <input type="text" required ref={lastnameRef} pattern="[a-zA-z]*"/>
+                <span className={classes.input_validation}>Invalid input.</span>
             </div>
             <div>
                 <h3>Role: </h3>
-                <input type="tel" required ref={roleRef} />
+                <input type="tel" required ref={roleRef} pattern="[a-zA-z]*"/>
+                <span className={classes.input_validation}>Invalid input.</span>
             </div>
             <div>
                 <h3>User Name: </h3>
-                <input type="tel" required ref={usernameRef} />
+                <input type="tel" required ref={usernameRef} pattern="[a-zA-z]*"/>
+                <span className={classes.input_validation}>Invalid input.</span>
             </div>
             <div>
                 <h3>Email: </h3>
-                <input type="text" required ref={emailRef} />
+                <input type="text" required ref={emailRef} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+                <span className={classes.input_validation}>Invalid input.</span>
             </div>
             <div>
                 <h3>New Password: </h3>
                 <input type="password" required ref={passwordRef} />
+                <span className={classes.input_validation}>Invalid input.</span>
             </div>
         </div>
 

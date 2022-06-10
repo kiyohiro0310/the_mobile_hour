@@ -56,6 +56,15 @@
         }
     }
 }
+@mixin input-validation{
+    .input_validation {
+        display: none;
+        color: rgb(253, 36, 36);
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+}
 
 .main {
     width: 100%;
@@ -229,7 +238,12 @@
                                     width: 100%;
                                     height: 40px;
                                     font-size: 17px;
+                                    &:invalid + .input_validation {
+                                        display: initial;
+                                    }
                                 }
+                                @include input-validation();
+
                             }
                         }
                     .edit {
@@ -317,9 +331,14 @@
                                 }
                                 input {
                                     height: 33px;
-                                    margin-bottom: 10px;
                                     font-size: 16px;
+                                    &:invalid + .input_validation {
+                                        display: initial;
+                                    }
+
                                 }
+                                @include input-validation();
+
                             }
                             .submit {
                                 margin: auto;
@@ -384,16 +403,20 @@
                                 align-self: flex-end;
                                 text-align: left;
                                 margin: auto;
+                                margin-bottom: 10px;
                                 display: flex;
                                 flex-direction: column;
                                 label {
                                     font-weight: bold;
                                 }
                                 input {
-                                    margin-bottom: 10px;
                                     height: 30px;
                                     font-size: 16px;
+                                    &:invalid + .input_validation{
+                                        display: initial;
+                                    }
                                 }
+                                @include input-validation();
                             }
                         }
 

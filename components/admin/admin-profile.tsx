@@ -187,23 +187,28 @@ const AdminProfile: NextPage<PropsType> = (props) => {
                 <div className={classes.info}>
                     <div>
                         <h3>First Name: </h3>
-                        <input type="text" defaultValue={admin.firstname} ref={firstnameRef} />
+                        <input type="text" defaultValue={admin.firstname} ref={firstnameRef} pattern="[a-zA-z]*"/>
+                        <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                         <h3>Last Name: </h3>
-                        <input type="text" defaultValue={admin.lastname} ref={lastnameRef} />
+                        <input type="text" defaultValue={admin.lastname} ref={lastnameRef} pattern="[a-zA-z]*"/>
+                        <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                         <h3>Role: </h3>
-                        <input type="tel" defaultValue={admin.role} ref={roleRef} />
+                        <input type="tel" defaultValue={admin.role} ref={roleRef} pattern="[a-zA-z]*"/>
+                        <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                         <h3>User Name: </h3>
-                        <input type="tel" defaultValue={admin.username} ref={usernameRef} />
+                        <input type="tel" defaultValue={admin.username} ref={usernameRef} pattern="[a-zA-z0-9]*"/>
+                        <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                         <h3>Email: </h3>
-                        <input type="text" defaultValue={admin.email}  ref={emailRef} />
+                        <input type="text" defaultValue={admin.email}  ref={emailRef} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+                        <span className={classes.input_validation}>Invalid input.</span>
                     </div>
                     <div>
                         <h3>New Password: </h3>
